@@ -9,6 +9,7 @@ const session = require('express-session');
 const passport = require('passport');
 
 
+
 //ROUTES
 var indexRouter = require('./routes/index');
 const newRouter = require('./routes/new')

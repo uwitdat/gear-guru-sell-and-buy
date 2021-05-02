@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post</title>
+    <%- include('../partials/styles.ejs')  %> 
+</head>
+<body>
+    <%- include('../partials/sideNav.ejs') %>
+    <div class='main'>
+      <%- include('../partials/topNav.ejs') %>
+      <div class='h2-text'>
+        <h1>Create Your Post</h1>
+
+        <form id='amp-form' action=/new/amp method='POST'>
+
+          <div class='form-div'>
+            <div>
+              <label>Title:</label>
+              <input type='text' name='title' required />
+            </div>
+
+          <div>
+          <label>Brand</label>  
+            <select name='brand' id='brand' required>
+              <option value='Marshall'>Marshall</option>
+              <option value='Fender'>Fender</option>
+              <option value='Vox'>Vox</option>
+              <option value='Orange'>Orange</option>
+              <option value='Line 6'>Line 6</option>
+            </select> 
+          </div>
+      
+          <div>
+          <label>Type</label>  
+            <select name='type' id='type' required>
+              <option value='Tube'>Tube</option>
+              <option value='Solid State'>Solid State</option>
+            </select>
+          </div>
+      
+          <div>
+            <label>Price $</label>   
+            <input type='number' name='price' required />
+          </div>
+      
+          <div>
+            <label>Description</label>   
+            <textarea rows = "10" cols = "50" name = "description" required>
+           </textarea><br>
+          </div>
+      
+          <div>
+            <button type='submit'>Submit</button>
+          </div>
+          </form>
+    </div>
+      </div>
+    
+</body>
+</html>

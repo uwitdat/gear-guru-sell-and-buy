@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('partials/styles.ejs')  %> 
+  </head>
+  <body>
+    <%- include('partials/sideNav.ejs') %>
+    <div class='main'>
+      <%- include('error.ejs') %>
+      <%- include('partials/topNav.ejs') %>
+
+      <div class='h2-text'>
+        <h2>Login</h2>
+      </div>
+
+      <form action='/users/login' method='POST'>
+        <div class='form-group'>
+            <label for='email'>Email</label>
+            <input type='email' id='email' name='email' placeholder='Enter E Mail' required/>
+        </div>
+        <div>
+            <label for='password'>Password</label>
+            <input type='password' id='password' name='password' placeholder='Enter Password' required/>
+        </div>
+        <button type='submit'>Login</button>
+    </form>
+    <a href='/users/register'>Dont have an account? Sign Up Now!</a>
+
+    </div>
+  </body>
+</html>

@@ -11,6 +11,9 @@ module.exports = {
     showHollowBody,
     showBelow1000,
     showAmps,
+    showSolidState,
+    showTube,
+    showAmpUnder1000,
 }
 
 
@@ -24,15 +27,6 @@ function showGuitars(req, res){
         })
     }
 
-//show all amps
-function showAmps(req, res){
-    Amp.find({})
-        .then((res)=>{
-            return Post.find({amp: res}).populate('amp').exec()
-        }).then((posts)=>{
-            res.render('posts/amps', {posts})
-        })
-    }
 
 
 
@@ -84,9 +78,43 @@ function showBelow1000(req, res){
     })
 }
 
+//show all amps
+function showAmps(req, res){
+    Amp.find({})
+        .then((res)=>{
+            return Post.find({amp: res}).populate('amp').exec()
+        }).then((posts)=>{
+            res.render('posts/amps', {posts})
+        })
+    }
 
 
+function showSolidState(req, res){
+    Amp.find({type: 'Solid State'})
+        .then((res)=>{
+            return Post.find({amp: res}).populate('amp').exec()
+        }).then((posts)=>{
+            res.render('posts/solidState', {posts})
+        })
+}
 
+function showTube(req, res){
+    Amp.find({type: 'Tube'})
+    .then((res)=>{
+        return Post.find({amp: res}).populate('amp').exec()
+    }).then((posts)=>{
+        res.render('posts/tube', {posts})
+    })
+}
+
+function showAmpUnder1000(req, res){
+    Amp.find({price: {$lt: 1000}})
+    .then((res)=>{
+        return Post.find({amp: res}).populate('amp').exec()
+    }).then((posts)=>{
+        res.render('posts/ampsBelow1000', {posts})
+    })
+}
 
 
     /// get posts 

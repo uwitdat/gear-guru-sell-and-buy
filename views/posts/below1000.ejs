@@ -16,7 +16,7 @@
         <% posts.forEach(function(post) { %>
 
     <div class='gtr-post'>
-        <a id='link' href='/posts/guitars/<%=post.id%>'><h1 class='gtr-title'><%= post.title %></h1></a> 
+        <a id='link' href='/posts/guitars/<%=post.id%>'><h1 class='gtr-title'><%= post.title.toUpperCase() %></h1></a> 
         <h4 id='gtr-date'><%= post.createdAt.toLocaleString() %></h2>
             <p id='gtr-des'><%= post.description %></p>
         <span id='price'>$<%= post.guitar.price %></span>

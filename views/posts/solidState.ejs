@@ -12,15 +12,15 @@
     <div class='main'>
       <%- include('../partials/topNav.ejs') %>
 
-        <% posts.sort((a, b) => b.createdAt - a.createdAt); %>
+      <% posts.sort((a, b) => b.createdAt - a.createdAt); %>
         <% posts.forEach(function(post) { %>
 
     <div class='gtr-post'>
-        <a id='link' href='/posts/guitars/<%=post.id%>'><h1 class='gtr-title'><%= post.title.toUpperCase() %></h1></a> 
-        <h4 id='gtr-date'><%= post.createdAt.toLocaleString() %></h2>
-            <p id='gtr-des'><%= post.description %></p>
-            <p id='gtr-des'><%= post.guitar.year %></p>
-        <span id='price'>$<%= post.guitar.price %></span>
+    <a id='link' href='/posts/amps/<%=post.id%>'><h1 class='gtr-title'><%= post.title.toUpperCase() %></h1></a> 
+     <h4 id='gtr-date'><%= post.createdAt.toLocaleString() %></h2>
+        <p id='gtr-des'><%= post.description %></p>
+        <p id='gtr-des'><%= post.amp?.type %></p>
+        <span id='price'>$<%= post.amp?.price %></span>
     </div>
     <% }); %>
 </div>

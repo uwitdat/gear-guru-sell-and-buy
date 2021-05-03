@@ -7,6 +7,6 @@ router.get('/guitar', newCtrl.newGtr)
 router.get('/amp', newCtrl.newAmp)
 
 router.post('/guitar', newCtrl.createPost)
-// router.post('/amp', newCtrl.createAmpPost)
+router.post('/amp', newCtrl.createAmpPost)
 
 module.exports = router;

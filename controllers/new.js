@@ -84,7 +84,7 @@ async function createAmpPost(req, res){
         })
     
         newPost
-        .populate('amp', Amp)
+        .populate('amp','brand type price', Amp)
         .save()
         .then(response => { 
             console.log(response)

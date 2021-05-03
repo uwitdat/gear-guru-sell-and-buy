@@ -21,6 +21,7 @@ router.get('/guitars/hollowbody', postsCtrl.showHollowBody)
 //show below 1000
 router.get('/guitars/below1000', postsCtrl.showBelow1000)
 
+router.get('/amps', postsCtrl.showAmps)
 
 
 module.exports = router;

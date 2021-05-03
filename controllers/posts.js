@@ -1,5 +1,5 @@
 const Guitar = require('../models/guitar');
-
+const Amp = require('../models/amp')
 
 const Post = require('../models/post')
 
@@ -10,18 +10,30 @@ module.exports = {
     showSolidBody,
     showHollowBody,
     showBelow1000,
+    showAmps,
 }
+
+
 //show all guitars
 function showGuitars(req, res){
-    Post.find({})
-    .populate('guitar')
-    .exec()
-    .then((posts)=>{
-        res.render('posts/guitars', {posts})})
-        .catch((err)=>{
-        console.log(err)
-    })
-}
+    Guitar.find({})
+        .then((res)=>{
+            return Post.find({guitar: res}).populate('guitar').exec()
+        }).then((posts)=>{
+            res.render('posts/guitars', {posts})
+        })
+    }
+
+//show all amps
+function showAmps(req, res){
+    Amp.find({})
+        .then((res)=>{
+            return Post.find({amp: res}).populate('amp').exec()
+        }).then((posts)=>{
+            res.render('posts/amps', {posts})
+        })
+    }
+
 
 
     //show vintage guitars
@@ -71,6 +83,8 @@ function showBelow1000(req, res){
         res.render('posts/below1000', {posts})
     })
 }
+
+
 
 
 

@@ -12,7 +12,7 @@ const showPosts = Post.find({})
 const showGtrs = Guitar.find({})
 const showAmps = Amp.find({})
 
-Promise.all([showPosts])
+Promise.all([showAmps])
 .then((res) => {
     console.log('posts --->', res)
     process.exit

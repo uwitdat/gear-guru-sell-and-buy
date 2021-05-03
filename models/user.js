@@ -16,7 +16,10 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
-    post: [{type: Schema.Types.ObjectId, ref: 'Post'}],
+    post: [{
+        type: Schema.Types.ObjectId, 
+         ref: 'Post'
+        }],
     required: false
 })
 

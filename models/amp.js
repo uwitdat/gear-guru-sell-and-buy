@@ -20,4 +20,4 @@ const ampSchema = new Schema({
 
 })
 
-module.exports = mongoose.model('Amp', ampSchema)
+module.exports = mongoose.model('amps', ampSchema)

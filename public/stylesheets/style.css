@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -131,14 +135,12 @@ div img {
 }
 
 .sell-one:hover {
-  font-size: 40px;
   color: white;
   background-color: rgb(72, 136, 209);
   border: 3px solid white;
 }
 
 .sell-two:hover {
-  font-size: 40px;
   color: white;
   background-color: rgb(72, 136, 209);
   border: 3px solid white;
@@ -163,4 +165,137 @@ div img {
 
 span {
   font-size: 30px;
+}
+
+.gtr-post {
+  width: 800px;
+  height: 220px;
+  border: solid 1px rgb(160, 160, 160);
+  margin: 15px;
+  background-color: rgb(32, 32, 32);
+  display: block;
+}
+
+.gtr-post:hover {
+  background-color: rgb(49, 49, 49);
+}
+
+#price {
+  font-family: "M PLUS 1p", sans-serif;
+  float: right;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+#gtr-date {
+  font-family: "M PLUS 1p", sans-serif;
+  margin: 0;
+}
+
+#gtr-des {
+  font-family: "M PLUS 1p", sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+#gtr-img {
+  font-family: "M PLUS 1p", sans-serif;
+  border: 1px solid white;
+  display: block;
+  float: left;
+}
+
+.gtr-title {
+  font-size: 35px;
+  font-family: "M PLUS 1p", sans-serif;
+  color: rgba(30, 235, 109, 0.829);
+  margin: 0;
+}
+
+#link {
+  text-decoration: none;
+}
+
+#post-label {
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 24px;
+  margin: 4px;
+  margin-left: 0;
+  width: 500px;
+  padding: 5px;
+  border: 1px solid rgb(116, 116, 116);
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px #bbbbbb;
+}
+
+#input-type {
+  font-size: 24px;
+  font-family: "M PLUS 1p", sans-serif;
+  margin: 4px;
+  width: 500px;
+  padding: 5px;
+  border: 1px solid rgb(116, 116, 116);
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px #bbbbbb;
+}
+
+#drop-down {
+  font-size: 22px;
+  font-family: "M PLUS 1p", sans-serif;
+  margin: 4px;
+  width: 500px;
+  padding: 5px;
+  border: 1px solid rgb(116, 116, 116);
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px #bbbbbb;
+}
+
+textarea {
+  font-size: 18px;
+  color: black;
+  font-family: "M PLUS 1p", sans-serif;
+  margin: 4px;
+  width: 500px;
+  padding: 5px;
+  border: 1px solid rgb(116, 116, 116);
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px #bbbbbb;
+  height: 130px;
+  resize: none;
+}
+
+#post-btn {
+  border: solid 1px white;
+  color: white;
+  background-color: rgb(51, 51, 51);
+  font-size: 25px;
+  padding: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-family: "M PLUS 1p", sans-serif;
+  width: 500px;
+  margin: 4px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+#post-btn:hover {
+  cursor: pointer;
+  background-color: rgb(31, 30, 30);
+}
+
+#post-title {
+  margin: 0;
+}
+
+#signup {
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 25px;
+  color: white;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+#signup:hover {
+  border-bottom: 1px solid white;
 }

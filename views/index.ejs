@@ -10,10 +10,12 @@
       <%- include('partials/topNav.ejs') %>
 
       <div class='h2-text'>
-      <% if(user) %>
-      <h1>Welcome <%=user.username %><br><i class='far fa-user-circle'></i></h1>
-    </div>
+        <% if(user){ %>
+        <h1>welcome <%=user.username %><br><i class='far fa-user-circle'></i></h1>
+        <% } %>
+      </div>
 
+      
       <div class='h2-text'>
         <h1>Are you selling?</h1>
       </div>

@@ -2,6 +2,7 @@
 const Amp = require('../models/amp');
 const Post = require('../models/post')
 const Guitar = require('../models/guitar')
+const User = require('../models/user')
 
 
 function newGtr(req, res){
@@ -13,7 +14,8 @@ function newAmp(req, res){
 }
 
 async function createPost(req, res){
-console.log(req.user)
+    console.log(req.user)
+
     // create guitar ref get id 
     // pass id as ref 
 
@@ -26,35 +28,25 @@ console.log(req.user)
         type, 
         price
     })
+        try {
+            const newGuitar = await guitar.save()
+               
+            const newPost = new Post({ 
+                title, 
+                description, 
+                guitar: newGuitar._id,
+                user: req.user._id
+            })
+        
+                 await newPost.save()
 
-    await guitar 
-    .save()
-    .then(guitarResponse => { 
-        const guitarId = guitarResponse._id 
+                    res.redirect('/posts/guitars') 
 
-        const newPost = new Post({ 
-            title, 
-            description, 
-            guitar: guitarId
-        })
-    
-        newPost
-        .populate('guitar', 'brand year type price', Guitar)
-        .save()
-        .then(response => { 
-            console.log(response)
-            res.redirect(
-                '/posts/guitars'
-            )              
-        })
-        .catch(err => { 
-            console.log(err)
-            res.send(err)
-        })
-    })
-    console.log(req.body)    
-    const post = new Post(req.body)
+            } catch(err) {
+                 console.log(err)
+       }
 }
+
 
 
 

@@ -7,7 +7,6 @@ const PostSchema = new Schema({
     title: {
         type: String, 
         required: true,
-        unique: true
     },
     description: {
         type: String,
@@ -22,6 +21,10 @@ const PostSchema = new Schema({
     amp: {
         type: Schema.Types.ObjectId,
         ref: 'amps'
+    }, 
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }
 }, {
     timestamps: true

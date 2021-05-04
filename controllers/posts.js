@@ -1,6 +1,7 @@
 const Guitar = require('../models/guitar');
 const Amp = require('../models/amp')
 const Post = require('../models/post')
+const User = require('../models/user')
 
 module.exports = {
     showGuitars,
@@ -20,11 +21,12 @@ module.exports = {
 function showGuitars(req, res){
     Guitar.find({})
         .then((res)=>{
-            return Post.find({guitar: res}).populate('guitar').exec()
+            return Post.find({guitar: res}).populate('guitar user').exec()
         }).then((posts)=>{
-            res.render('posts/guitars', {posts})
-        })
-    }
+            console.log('this is the post', posts)
+        res.render('posts/guitars', {posts})
+    })
+}
 
     //show vintage guitars
 function showVintageGuitars(req, res){

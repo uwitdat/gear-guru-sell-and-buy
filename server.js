@@ -7,6 +7,7 @@ require('./config/database')
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+const methodOverride = require('method-override')
 
 
 
@@ -34,6 +35,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
 
 app.use(session({
   secret: 'hi',

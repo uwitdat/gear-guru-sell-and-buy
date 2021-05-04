@@ -296,7 +296,7 @@ textarea {
 
 .gtr-post2 {
   width: 850px;
-  height: 600px;
+  height: 570px;
   border: solid 1px rgb(160, 160, 160);
   margin: 15px;
   background-color: rgb(32, 32, 32);
@@ -305,7 +305,7 @@ textarea {
 
 .show-title {
   font-family: "M PLUS 1p", sans-serif;
-  font-size: 40px;
+  font-size: 30px;
   color: rgba(30, 235, 109, 0.829);
   margin: 0;
 }
@@ -325,7 +325,7 @@ textarea {
 
 #show-des {
   font-family: "M PLUS 1p", sans-serif;
-  font-size: 22px;
+  font-size: 20px;
   margin: 0;
 }
 
@@ -338,7 +338,7 @@ textarea {
 
 #edit {
   font-family: "M PLUS 1p", sans-serif;
-  font-size: 28px;
+  font-size: 23px;
   text-decoration: none;
   color: white;
   margin: 70px;
@@ -347,4 +347,23 @@ textarea {
 #edit:hover {
   border-bottom: 1px solid white;
   color: rgb(201, 201, 201);
+}
+
+.delete-btn {
+  display: inline-block;
+  border: none;
+  color: rgb(201, 201, 201);
+  background-color: black;
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 23px;
+}
+
+#checkout {
+  display: block;
+}
+
+.delete-btn:hover {
+  border-bottom: 1px solid white;
+  color: rgb(201, 201, 201);
+  cursor: pointer;
 }

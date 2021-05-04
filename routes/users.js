@@ -61,12 +61,13 @@ router.post('/register', (req, res) => {
                 newUser.save()
                 .then(user => {
                     res.redirect('login')
+                    errors.push({ msg: `Welcome to Gear Guru ${user.username}`})
                     console.log(user)
-                })
+                    })
                 .catch(err => console.log(err))
-            }))
-        }
-    })
+                }))
+            }
+        })
     }
 })  
 

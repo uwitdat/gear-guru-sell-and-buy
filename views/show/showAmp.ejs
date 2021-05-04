@@ -27,7 +27,13 @@
     <div><p id='show-des'><%= post.description %></p></div>
 
 </div>
-    <a id='checkout' href=''>Add To Cart<i class="fa fa-shopping-cart"></i></a>    <a id='checkout' href=''>Edit</a>    <a id='checkout' href=''>Delete</a>
+<div class='btns'>
+    <a id='checkout' href=''>Add To Cart<i class="fa fa-shopping-cart"></i></a>    <a id='edit' href='/posts/amps/<%=post.id%>/edit'>Edit<i class='far fa-edit'></i></a>   
+    
+    <form action='/posts/amps/<%=post.id%>?_method=DELETE' method="POST" >
+        <button class='delete-btn' type="submit">Delete <i class='far fa-trash-alt'></i></button>
+    </form>
+</div>
 
 </div>
 </body>

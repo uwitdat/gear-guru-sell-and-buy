@@ -15,7 +15,7 @@
         <h1 id='post-title'> Edit Your Post <%=post.title %></h1>
     </div>
 
-    <form id='guitar-form' action=/new/guitar method='POST'>
+    <form id='guitar-form' action='/posts/guitars/<%=post.id%>/edit?_method=PUT' method='POST'>
 
     <div class='form-div'>
       <div>

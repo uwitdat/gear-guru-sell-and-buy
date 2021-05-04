@@ -41,10 +41,22 @@ router.get('/guitars/:id', showCtrl.showGuitar)
 router.get('/amps/:id', showCtrl.showAmp)
 
 
-//get edit
+//get edit guitar
 router.get('/guitars/:id/edit', showCtrl.editGtr)
 
-//put request
+//put edit guitar
 router.put('/guitars/:id/edit', showCtrl.updateGtr)
+
+//DELETE REQ guitar
+router.delete('/guitars/:id', showCtrl.deleteGtr)
+
+//get edit amp
+router.get('/amps/:id/edit', showCtrl.editAmp)
+
+//put edit amp
+router.put('/amps/:id/edit', showCtrl.updateAmp)
+
+//DELETE REQ amp
+router.delete('/amps/:id', showCtrl.deleteAmp)
 
 module.exports = router;

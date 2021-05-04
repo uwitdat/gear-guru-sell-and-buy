@@ -10,12 +10,12 @@
   <body>
     <%- include('partials/sideNav.ejs') %>
     <div class='main'>
-      <%- include('error.ejs') %>
       <%- include('partials/topNav.ejs') %>
-
+      
       <div class='h2-text'>
         <h2>Login</h2>
       </div>
+      <%- include('error.ejs') %>
 
       <form action='/users/login' method='POST'>
         <div class='form-group'>

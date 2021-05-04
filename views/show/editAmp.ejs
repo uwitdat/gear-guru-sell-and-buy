@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post</title>
+    <%- include('../partials/styles.ejs')  %> 
+</head>
+<body>
+    <%- include('../partials/sideNav.ejs') %>
+    <div class='main'>
+      <%- include('../partials/topNav.ejs') %>
+      <div class='h2-text'>
+        <h1>Edit Your Post <%=post.title%></h1>
+
+        <form id='amp-form' action=/new/amp method='POST'>
+
+          <div class='form-div'>
+            <div>
+              <input type='text' name='title' id='post-label' placeholder='<%=post.title%>' required />
+            </div>
+
+          <div>
+            <select name='brand' id='drop-down' required>
+              <option value='Marshall'>Marshall</option>
+              <option value='Fender'>Fender</option>
+              <option value='Vox'>Vox</option>
+              <option value='Orange'>Orange</option>
+              <option value='Line 6'>Line 6</option>
+            </select> 
+          </div>
+      
+          <div>  
+            <select name='type' id='drop-down' required>
+              <option value='Tube'>Tube</option>
+              <option value='Solid State'>Solid State</option>
+            </select>
+          </div>
+      
+          <div>  
+            <input type='number' name='price' id='input-type' placeholder='$<%=post.amp.price%>' min='1' required />
+          </div>
+      
+          <div>
+            <textarea id='post-div' name="description" placeholder='<%=post.description%>'  required style="height:130px"></textarea> 
+          </div>
+      
+          <div>
+            <button type='submit' id='post-btn'>Submit</button>
+          </div>
+          </form>
+    </div>
+      </div>
+    
+</body>
+</html>

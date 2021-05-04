@@ -12,6 +12,8 @@ router.get('/register', (req, res) => {
     res.render('register.ejs')
 })
   
+//REGISTER HANDLE
+
 router.post('/register', (req, res) => {
     const {username, email, password, password2 } = req.body
     let errors = []
@@ -71,12 +73,14 @@ router.post('/register', (req, res) => {
     }
 })  
 
+
+
 //login
 router.post('/login', (req, res, next) => {
     passport.authenticate('local', {
         successRedirect: '/',
         failureRedirect: '/users/login'
-    })(req, res, next)
+    })(req, res, next);
 })
   
   module.exports = router;

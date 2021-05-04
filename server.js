@@ -3,13 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-require('./config/database')
 const flash = require('connect-flash');
 const session = require('express-session');
-const passport = require('passport');
 const methodOverride = require('method-override')
+require('./config/database')
 
 
+const passport = require('passport');
 
 //ROUTES
 var indexRouter = require('./routes/index');
@@ -23,6 +23,7 @@ const checkoutRouter = require('./routes/checkout')
 
 var app = express();
 
+//passport require
 require('./config/passport')(passport)
 
 
@@ -37,19 +38,24 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'))
 
+//EXPRESS SESSION
 app.use(session({
-  secret: 'hi',
+  secret: 'secret',
   resave: true,
-  saveUninitialized: true,
-  cookie: { secure: true}
+  saveUninitialized: true
 }));
 
+//PASSPORT MIDDLEWARE
 app.use(passport.initialize());
-app.use(passport.session())
+app.use(passport.session());
 
 
 app.use(flash())
 
+app.use(function(req, res, next){
+  res.locals.user = req.user
+  next()
+})
 
 
 //routes

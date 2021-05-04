@@ -13,18 +13,20 @@ module.exports = function(passport){
                     return done(null, false, { message: 'That email is not registered'})
                 }
 
-                bcrypt.compare(password, user.password), (err, isMatch) => {
+                bcrypt.compare(password, user.password, (err, isMatch) => {
                     if(err) throw err;
+
                     if(isMatch){
                         return done(null, user)
                     } else {
                         return done(null, false, { message: 'incorrect password'})
                     }
-                }
+                
+                })
             })
             .catch(err => console.log (err))
         })
-    )
+    );
 
     passport.serializeUser((user, done) => {
         done(null, user.id);

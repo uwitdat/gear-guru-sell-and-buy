@@ -3,6 +3,12 @@
   <a class='top' href='/posts/guitars'>GUITARS</a>
   <a class='top' href='/posts/amps'>AMPS</a>
   <a class='top' href='/'>HOME</a>
-  <a class='top' href='/users/login'>LOG IN</a>
+  
+<% if(user) { %>
+  <a class='top' href='/users/logout'>LOG OUT</a> 
+  <% }else{ %> 
+    <a class='top' href='/users/login'>LOG IN</a>  
+  <% }%>
+
   <a class='top' href='/checkout'>CART<i class="fa fa-shopping-cart"></i></a>
 </nav>

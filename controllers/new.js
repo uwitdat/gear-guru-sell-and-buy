@@ -13,7 +13,7 @@ function newAmp(req, res){
 }
 
 async function createPost(req, res){
-
+console.log(req.user)
     // create guitar ref get id 
     // pass id as ref 
 

@@ -75,13 +75,25 @@ function editAmp(req, res){
 }
 
 //put edit amp
-function updateAmp(req, res){
-    Post.findOneAndUpdate(req,params.id, req.body, {new: true}).populate('amp').exec().then((post)=>{
-        post.save().then((res)=>{
-            console.log(res)
-            res.redirect('show/showAmp', { post })
-        })
-    })
+async function updateAmp(req, res){
+    console.log(req.body)
+
+    let post = {
+        title: req.body.title,
+        description: req.body.description,    
+    }
+
+    let amp = {
+        brand: req.body.brand,
+        type: req.body.type,
+        price: req.body.price
+    }
+
+    let newPost = await Post.findOneAndUpdate(req.params.id, post, {new: true})
+
+    let newAmp = await Amp.findOneAndUpdate({_id: newPost.amp}, amp, {new: true})
+    
+    res.redirect('/posts/amps')
     }
 
 

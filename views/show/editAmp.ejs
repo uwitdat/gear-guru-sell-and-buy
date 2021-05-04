@@ -14,7 +14,7 @@
       <div class='h2-text'>
         <h1>Edit Your Post <%=post.title%></h1>
 
-        <form id='amp-form' action=/new/amp method='POST'>
+        <form id='amp-form' action='/posts/amps/<%=post.id%>/edit?_method=PUT' method='POST'>
 
           <div class='form-div'>
             <div>

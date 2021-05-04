@@ -99,7 +99,7 @@ div img {
 }
 
 .sell {
-  color: rgb(201, 200, 200);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   font-family: "M PLUS 1p", sans-serif;
   font-size: 35px;
@@ -109,7 +109,7 @@ div img {
 }
 
 .sell-one {
-  color: rgb(201, 200, 200);
+  color: rgb(0, 0, 0);
   display: inline-block;
   text-decoration: none;
   font-family: "M PLUS 1p", sans-serif;
@@ -118,11 +118,11 @@ div img {
   padding: 15px;
   padding-left: 40px;
   padding-right: 40px;
-  background-color: rgb(59, 116, 180);
+  background-color: rgba(30, 235, 109, 0.829);
 }
 
 .sell-two {
-  color: rgb(201, 200, 200);
+  color: rgb(0, 0, 0);
   display: inline-block;
   text-decoration: none;
   font-family: "M PLUS 1p", sans-serif;
@@ -131,18 +131,16 @@ div img {
   padding: 15px;
   padding-left: 60px;
   padding-right: 60px;
-  background-color: rgb(59, 116, 180);
+  background-color: rgba(30, 235, 109, 0.829);
 }
 
 .sell-one:hover {
   color: white;
-  background-color: rgb(72, 136, 209);
   border: 3px solid white;
 }
 
 .sell-two:hover {
   color: white;
-  background-color: rgb(72, 136, 209);
   border: 3px solid white;
 }
 
@@ -225,7 +223,6 @@ span {
   padding: 5px;
   border: 1px solid rgb(116, 116, 116);
   border-radius: 10px;
-  box-shadow: 1px 1px 3px #bbbbbb;
 }
 
 #input-type {
@@ -236,7 +233,6 @@ span {
   padding: 5px;
   border: 1px solid rgb(116, 116, 116);
   border-radius: 10px;
-  box-shadow: 1px 1px 3px #bbbbbb;
 }
 
 #drop-down {
@@ -247,7 +243,6 @@ span {
   padding: 5px;
   border: 1px solid rgb(116, 116, 116);
   border-radius: 10px;
-  box-shadow: 1px 1px 3px #bbbbbb;
 }
 
 textarea {
@@ -259,7 +254,6 @@ textarea {
   padding: 5px;
   border: 1px solid rgb(116, 116, 116);
   border-radius: 10px;
-  box-shadow: 1px 1px 3px #bbbbbb;
   height: 130px;
   resize: none;
 }
@@ -298,4 +292,59 @@ textarea {
 
 #signup:hover {
   border-bottom: 1px solid white;
+}
+
+.gtr-post2 {
+  width: 850px;
+  height: 600px;
+  border: solid 1px rgb(160, 160, 160);
+  margin: 15px;
+  background-color: rgb(32, 32, 32);
+  display: block;
+}
+
+.show-title {
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 40px;
+  color: rgba(30, 235, 109, 0.829);
+  margin: 0;
+}
+
+#show-title-2 {
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 20px;
+  color: rgba(30, 235, 109, 0.829);
+  margin: 0;
+}
+
+#show-date {
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 15px;
+  margin: 0;
+}
+
+#show-des {
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 22px;
+  margin: 0;
+}
+
+#show-price {
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.829);
+  margin: 0;
+}
+
+#edit {
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 28px;
+  text-decoration: none;
+  color: white;
+  margin: 70px;
+}
+
+#edit:hover {
+  border-bottom: 1px solid white;
+  color: rgb(201, 201, 201);
 }

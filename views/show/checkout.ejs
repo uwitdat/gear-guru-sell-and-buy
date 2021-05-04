@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../partials/styles.ejs')  %> 
+</head>
+<body>
+    <%- include('../partials/sideNav.ejs') %>
+    <div class='main'>
+      <%- include('../partials/topNav.ejs') %>
+
+<h1>Checkout:</h1>
+
+<h2>Your Items:</h2>
+<%= post.title %>
+<h2>Your Total:</h2>
+<%= post.guitar.price %>
+
+</div>
+</body>
+</html>

@@ -15,6 +15,7 @@ var indexRouter = require('./routes/index');
 const newRouter = require('./routes/new')
 const usersRouter = require('./routes/users')
 const postsRouter = require('./routes/posts')
+const checkoutRouter = require('./routes/checkout')
 
 
 
@@ -54,6 +55,7 @@ app.use('/', indexRouter);
 app.use('/new', newRouter);
 app.use('/users', usersRouter)
 app.use('/posts', postsRouter)
+app.use('/checkout', checkoutRouter)
 
 
 

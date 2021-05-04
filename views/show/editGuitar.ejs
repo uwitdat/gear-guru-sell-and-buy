@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post</title>
+    <%- include('../partials/styles.ejs')  %> 
+</head>
+<body>
+    <%- include('../partials/sideNav.ejs') %>
+    <div class='main'>
+      <%- include('../partials/topNav.ejs') %>
+      <div class='h2-text'>
+        <h1 id='post-title'> Edit Your Post <%=post.title %></h1>
+    </div>
+
+    <form id='guitar-form' action=/new/guitar method='POST'>
+
+    <div class='form-div'>
+      <div>
+
+        <input type='text' name='title' id='post-label' placeholder='<%=post.title%>' required />
+      </div>
+    <div> 
+      <select name='brand' id='drop-down' required>
+        <option value='Fender'>Fender</option>
+        <option value='Gibson'>Gibson</option>
+        <option value='Ibanez'>Ibanez</option>
+        <option value='Taylor'>Taylor</option>
+        <option value='PRS'>PRS</option>
+        <option value='ESP'>ESP</option>
+      </select> 
+    </div>
+
+
+    <div class='form-div'>
+      <input type='number' name='year' min='1950' max='2021' id='input-type' placeholder='<%=post.guitar.year%>' required>
+    </div>
+
+    <div class='form-div'> 
+      <select name='type' id='drop-down' required>
+        <option value='Solid Body'>Solid Body</option>
+        <option value='Hollow Body'>Hollow Body</option>
+        <option value='Acoustic'>Acoustic</option>
+      </select>
+    </div>
+
+    <div class='form-div'>  
+      <input type='number' name='price' id='input-type' placeholder='$<%=post.guitar.price%>' min='1' required />
+    </div>
+
+    <div class='form-div'>  
+      <textarea id='post-div' name="description" placeholder='<%=post.description%>'  required style="height:130px"></textarea> 
+    </div>
+
+    <div>
+      <button type='submit' id='post-btn'>Edit</button>
+    </div>
+    </form>
+
+  </div>
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../partials/styles.ejs')  %> 
+</head>
+<body>
+    <%- include('../partials/sideNav.ejs') %>
+    <div class='main'>
+      <%- include('../partials/topNav.ejs') %>
+
+<div class='gtr-post2'>
+    <div><h1 class='show-title'><%= post.title.toUpperCase() %></h1></div>
+
+
+    <div> <h2 id='show-title-2'>SPECS:</h2></div>       
+    <div><h4 id='show-date'><%= post.amp?.brand %></h4></div>
+    <div><h4 id='show-date'><%= post.amp?.type %></h4></div>
+
+
+    <div> <h2 id='show-title-2'>PRICE:</h2></div> 
+    <div><span id='show-price'>$<%= post.amp?.price%></span></div>
+    <div> <h2 id='show-title-2'>DESCRIPTION:</h2></div>   
+    <div><p id='show-des'><%= post.description %></p></div>
+
+</div>
+    <a id='checkout' href=''>Add To Cart<i class="fa fa-shopping-cart"></i></a>    <a id='checkout' href=''>Edit</a>    <a id='checkout' href=''>Delete</a>
+
+</div>
+</body>
+</html>

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const postsCtrl = require('../controllers/posts')
+const showCtrl = require('../controllers/show')
 
 //show all guitars
 router.get('/guitars', postsCtrl.showGuitars)
@@ -32,5 +33,18 @@ router.get('/amps/tube', postsCtrl.showTube)
 
 //show amps below 1000
 router.get('/amps/below1000', postsCtrl.showAmpUnder1000)
+
+
+//SHOW ONE
+router.get('/guitars/:id', showCtrl.showGuitar)
+
+router.get('/amps/:id', showCtrl.showAmp)
+
+
+//get edit
+router.get('/guitars/:id/edit', showCtrl.editGtr)
+
+//put request
+router.put('/guitars/:id/edit', showCtrl.updateGtr)
 
 module.exports = router;

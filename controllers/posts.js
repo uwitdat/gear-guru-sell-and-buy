@@ -1,6 +1,5 @@
 const Guitar = require('../models/guitar');
 const Amp = require('../models/amp')
-
 const Post = require('../models/post')
 
 module.exports = {
@@ -26,9 +25,6 @@ function showGuitars(req, res){
             res.render('posts/guitars', {posts})
         })
     }
-
-
-
 
     //show vintage guitars
 function showVintageGuitars(req, res){
@@ -87,7 +83,6 @@ function showAmps(req, res){
             res.render('posts/amps', {posts})
         })
     }
-
 
 function showSolidState(req, res){
     Amp.find({type: 'Solid State'})

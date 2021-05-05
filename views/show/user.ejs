@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../partials/styles.ejs')  %> 
+</head>
+<body>
+    <%- include('../partials/sideNav.ejs') %>
+    <div class='main'>
+      <%- include('../partials/topNav.ejs') %>
+      <h1 class='gtr-title'><%=user.username%><i class='far fa-user-circle'></i></h1>
+      <% userPost.forEach(function(post) { %>
+
+        <div class='gtr-post'>
+            <a id='link' href='/posts/guitars/<%=post.id%>'><h1 class='gtr-title'><%= post.title.toUpperCase() %></h1></a> 
+             <h4 id='gtr-date'><%= post.createdAt.toLocaleString() %></h4>
+             <h4 id='gtr-date'>posted by <%= post.user?.username %></h4></a>
+                <p id='gtr-des'><%= post.description %></p>
+                <span id='price'>$<%= post.guitar?.price %></span>
+            </div>
+<% }); %>
+</div>
+</body>
+</html>

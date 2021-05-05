@@ -52,46 +52,37 @@ async function createPost(req, res){
 
 async function createAmpPost(req, res){
 
-    // create amp ref get id 
+
+    // create guitar ref get id 
     // pass id as ref 
 
-    // Amp 
+    // AMP
     const { title, description, brand, type, price } = req.body 
 
     const amp = new Amp({
-        brand, 
+        brand,  
         type, 
         price
     })
+        try {
+            const newAmp = await amp.save()
+               
+            const newPost = new Post({ 
+                title, 
+                description, 
+                amp: newAmp._id,
+                user: req.user._id
+            })
+        
+                 await newPost.save()
 
-    await amp 
-    .save()
-    .then(ampResponse => { 
-        const ampId = ampResponse._id 
+                    res.redirect('/posts/amps') 
 
-        const newPost = new Post({ 
-            title, 
-            description, 
-            amp: ampId
-        })
-    
-        newPost
-        .populate('amp','brand type price', Amp)
-        .save()
-        .then(response => { 
-            console.log(response)
-            res.redirect(
-                '/posts/amps'
-            )              
-        })
-        .catch(err => { 
-            console.log(err)
-            res.send(err)
-        })
-    })
-    console.log(req.body)    
-    const post = new Post(req.body)
+            } catch(err) {
+                 console.log(err)
+       }
 }
+
 
 module.exports = {
     newGtr,

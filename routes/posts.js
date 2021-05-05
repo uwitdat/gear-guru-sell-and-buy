@@ -59,4 +59,8 @@ router.put('/amps/:id/edit', showCtrl.updateAmp)
 //DELETE REQ amp
 router.delete('/amps/:id', showCtrl.deleteAmp)
 
+
+
+
+
 module.exports = router;

@@ -3,6 +3,7 @@ var router = express.Router();
 const User = require('../models/user')
 const bcrypt = require('bcryptjs')
 const passport = require('passport')
+const showCtrl = require('../controllers/show')
 
 router.get('/login', (req, res) => {
     res.render('login.ejs')
@@ -89,3 +90,6 @@ router.get('/logout',(req, res) => {
     res.redirect('/users/login')
 })
   module.exports = router;
+
+
+router.get('/:id/profile', showCtrl.getUser)

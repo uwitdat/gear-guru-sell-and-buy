@@ -52,6 +52,7 @@ app.use(passport.session());
 
 app.use(flash())
 
+//MIDDLEWARE FOR GLOBAL USER VARIABLE
 app.use(function(req, res, next){
   res.locals.user = req.user
   next()

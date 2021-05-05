@@ -8,8 +8,20 @@ const Post = require('./models/post')
 
 
 // const createGuitars = Guitar.create(data.guitars)
-const showPosts = Post.find({})
-const showGtrs = Guitar.find({})
-const showAmps = Amp.find({})
+const dltPosts = Post.deleteMany({})
+const dltGtrs = Guitar.deleteMany({})
+const dltAmps = Amp.deleteMany({})
+const dltUsers = User.deleteMany({})
 
-console.log(showPosts)
+
+
+    User.find({})
+    .then((res) => {
+        return Post.find({user: res}).populate('user').exec()
+    }).then((posts)=>{
+        console.log(posts)
+    })
+
+
+
+

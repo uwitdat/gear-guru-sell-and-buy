@@ -11,13 +11,13 @@
 
       <div class='h2-text'>
         <% if(user){ %>
-        <h1>welcome <%=user.username %><br><i class='far fa-user-circle'></i></h1>
+        <h1>welcome <a class='profile' href='/users/<%=user.id%>/profile'><%=user.username %></a><br><i class='far fa-user-circle'></i></h1>
         <% } %>
       </div>
 
       
       <div class='h2-text'>
-        <h1>Are you selling?</h1>
+        <h1>are you selling?</h1>
       </div>
 
 

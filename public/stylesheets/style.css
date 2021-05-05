@@ -359,11 +359,47 @@ textarea {
 }
 
 #checkout {
-  display: block;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  color: rgb(201, 201, 201);
+  background-color: black;
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 23px;
+}
+
+#checkout:hover {
+  border-bottom: 1px solid white;
+  color: rgb(201, 201, 201);
+  cursor: pointer;
 }
 
 .delete-btn:hover {
   border-bottom: 1px solid white;
   color: rgb(201, 201, 201);
   cursor: pointer;
+}
+
+.profile {
+  text-decoration: none;
+  color: white;
+}
+
+.profile:hover {
+  text-decoration: none;
+  color: white;
+  border-bottom: solid 1px white;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+#link-2 {
+  color: white;
+  text-decoration: none;
+}
+
+#link-2:hover {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid white;
 }

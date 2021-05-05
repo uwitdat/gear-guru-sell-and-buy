@@ -23,7 +23,6 @@ function showGuitars(req, res){
         .then((res)=>{
             return Post.find({guitar: res}).populate('guitar user').exec()
         }).then((posts)=>{
-            console.log('this is the post', posts)
         res.render('posts/guitars', {posts})
     })
 }
@@ -32,7 +31,7 @@ function showGuitars(req, res){
 function showVintageGuitars(req, res){
     Guitar.find({year: {$lt:1980}})
         .then((res)=>{
-            return Post.find({guitar: res}).populate('guitar').exec()
+            return Post.find({guitar: res}).populate('guitar user').exec()
         }).then((posts)=>{
             res.render('posts/vintage', {posts})
         })
@@ -42,7 +41,7 @@ function showVintageGuitars(req, res){
 function showModernGuitars(req, res){
     Guitar.find({year: {$gt:2009}})
     .then((res)=>{
-        return Post.find({guitar: res}).populate('guitar').exec()
+        return Post.find({guitar: res}).populate('guitar user').exec()
     }).then((posts)=>{
         res.render('posts/modern', {posts})
     })
@@ -52,7 +51,7 @@ function showModernGuitars(req, res){
 function showSolidBody(req,res){
     Guitar.find({type: 'Solid Body'})
     .then((res)=> {
-        return Post.find({guitar: res}).populate('guitar').exec()
+        return Post.find({guitar: res}).populate('guitar user').exec()
     }).then((posts)=>{
         res.render('posts/solidBody', {posts})
     })
@@ -61,7 +60,7 @@ function showSolidBody(req,res){
 function showHollowBody(req, res){
     Guitar.find({type: 'Hollow Body'})
     .then((res)=>{
-        return Post.find({guitar: res}).populate('guitar').exec()
+        return Post.find({guitar: res}).populate('guitar user').exec()
     }).then((posts)=>{
         res.render('posts/hollowBody', {posts})
     })
@@ -70,7 +69,7 @@ function showHollowBody(req, res){
 function showBelow1000(req, res){
     Guitar.find({price: {$lt:1000}})
     .then((res)=>{
-        return Post.find({guitar: res}).populate('guitar').exec()
+        return Post.find({guitar: res}).populate('guitar user').exec()
     }).then((posts)=>{
         res.render('posts/below1000', {posts})
     })
@@ -80,7 +79,7 @@ function showBelow1000(req, res){
 function showAmps(req, res){
     Amp.find({})
         .then((res)=>{
-            return Post.find({amp: res}).populate('amp').exec()
+            return Post.find({amp: res}).populate('amp user').exec()
         }).then((posts)=>{
             res.render('posts/amps', {posts})
         })
@@ -89,7 +88,7 @@ function showAmps(req, res){
 function showSolidState(req, res){
     Amp.find({type: 'Solid State'})
         .then((res)=>{
-            return Post.find({amp: res}).populate('amp').exec()
+            return Post.find({amp: res}).populate('amp user').exec()
         }).then((posts)=>{
             res.render('posts/solidState', {posts})
         })
@@ -98,7 +97,7 @@ function showSolidState(req, res){
 function showTube(req, res){
     Amp.find({type: 'Tube'})
     .then((res)=>{
-        return Post.find({amp: res}).populate('amp').exec()
+        return Post.find({amp: res}).populate('amp user').exec()
     }).then((posts)=>{
         res.render('posts/tube', {posts})
     })
@@ -107,7 +106,7 @@ function showTube(req, res){
 function showAmpUnder1000(req, res){
     Amp.find({price: {$lt: 1000}})
     .then((res)=>{
-        return Post.find({amp: res}).populate('amp').exec()
+        return Post.find({amp: res}).populate('amp user').exec()
     }).then((posts)=>{
         res.render('posts/ampsBelow1000', {posts})
     })

@@ -14,12 +14,13 @@
 
 <div class='gtr-post2'>
     <div><h1 class='show-title'><%= post.title.toUpperCase() %></h1></div>
-    <h4 id='gtr-date'>posted by <%= post.user?.username %></h4>
+    <h4 id='gtr-date'>posted by <%= post.user?.username %></h4> 
 
     <div> <h2 id='show-title-2'>SPECS:</h2></div>       
     <div><h4 id='show-date'><%= post.guitar.brand %></h4></div>
     <div><h4 id='show-date'><%= post.guitar.type %></h4></div>
     <div><h4 id='show-date'><%= post.guitar.year %></h4></div>
+
 
 
     <div> <h2 id='show-title-2'>PRICE:</h2></div> 
@@ -29,9 +30,13 @@
 
 </div>
 
-<% if(user){ %>
 <div class='btns'>
-    <a id='checkout' href=''>Add To Cart<i class="fa fa-shopping-cart"></i></a>    <a id='edit' href='/posts/guitars/<%=post.id%>/edit'>Edit<i class='far fa-edit'></i></a>   
+    <% if(user && user.username !== post.user.username || !user){ %>
+    <a id='checkout' href='/checkout/<%=post.id%>'>Add To Cart<i class="fa fa-shopping-cart"></i></a> 
+    <% } %> 
+
+    <% if(user && user.username === post.user.username){ %>
+      <a id='edit' href='/posts/guitars/<%=post.id%>/edit'>Edit<i class='far fa-edit'></i></a>   
     
     <form action='/posts/guitars/<%=post.id%>?_method=DELETE' method="POST" >
         <button class='delete-btn' type="submit">Delete <i class='far fa-trash-alt'></i></button>

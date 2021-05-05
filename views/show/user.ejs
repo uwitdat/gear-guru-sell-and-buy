@@ -12,14 +12,33 @@
     <div class='main'>
       <%- include('../partials/topNav.ejs') %>
       <h1 class='gtr-title'><%=user.username%><i class='far fa-user-circle'></i></h1>
+
+      <% userPost.sort((a, b) => b.createdAt - a.createdAt); %>
+      <% userPost.sort((a, b) => b.updatedAt - a.updatedAt); %>
+
       <% userPost.forEach(function(post) { %>
 
         <div class='gtr-post'>
+            <% if(post.guitar) { %>
             <a id='link' href='/posts/guitars/<%=post.id%>'><h1 class='gtr-title'><%= post.title.toUpperCase() %></h1></a> 
+                <% } %>
+
+                <% if(post.amp) { %>
+                    <a id='link' href='/posts/amps/<%=post.id%>'><h1 class='gtr-title'><%= post.title.toUpperCase() %></h1></a> 
+                        <% } %>
+
+                        <% if(post.guitar) { %>
+                            <h4 id='gtr-date'>posted in: <a class='link-to' href='/posts/guitars'>guitars</a></h4>
+                                <% } %>
+                                <% if(post.amp) { %>
+                                    <h4 id='gtr-date'>posted in: <a class='link-to' href='/posts/amps'>amps</a></h4>
+                                        <% } %>
+
              <h4 id='gtr-date'><%= post.createdAt.toLocaleString() %></h4>
              <h4 id='gtr-date'>posted by <%= post.user?.username %></h4></a>
                 <p id='gtr-des'><%= post.description %></p>
-                <span id='price'>$<%= post.guitar?.price %></span>
+
+
             </div>
 <% }); %>
 </div>

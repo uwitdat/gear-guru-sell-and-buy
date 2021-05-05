@@ -15,6 +15,7 @@
 
 
         <% posts.sort((a, b) => b.createdAt - a.createdAt); %>
+        <% posts.sort((a, b) => b.updatedAt - a.updatedAt); %>
         <% posts.forEach(function(post) { %>
 
     <div class='gtr-post'>

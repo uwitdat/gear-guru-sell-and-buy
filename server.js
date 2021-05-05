@@ -19,8 +19,6 @@ const postsRouter = require('./routes/posts')
 const checkoutRouter = require('./routes/checkout')
 
 
-
-
 var app = express();
 
 //passport require

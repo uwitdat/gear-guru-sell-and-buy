@@ -43,10 +43,10 @@
     <% } %> 
 
     <% if(user && user.username === post.user.username){ %>
-      <a id='edit' href='/posts/guitars/<%=post.id%>/edit'>Edit<i class='far fa-edit'></i></a>   
+      <a id='edit' href='/posts/guitars/<%=post.id%>/edit'>Edit</a>   
     
     <form action='/posts/guitars/<%=post.id%>?_method=DELETE' method="POST" >
-        <button class='delete-btn' type="submit">Delete <i class='far fa-trash-alt'></i></button>
+        <button class='delete-btn' type="submit">Delete </button>
     </form>
     
 </div>

@@ -11,7 +11,7 @@
     <%- include('../partials/sideNav.ejs') %>
     <div class='main'>
       <%- include('../partials/topNav.ejs') %>
-      <h1 class='gtr-title'><%=user.username%><i class='far fa-user-circle'></i></h1>
+      <h1 class='gtr-title'><%=user.username%><i class='fa fa-user-circle'></i></h1>
 
       <% userPost.sort((a, b) => b.createdAt - a.createdAt); %>
       <% userPost.sort((a, b) => b.updatedAt - a.updatedAt); %>

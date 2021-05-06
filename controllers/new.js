@@ -77,6 +77,8 @@ async function createAmpPost(req, res){
                 amp: newAmp._id,
                 user: req.user._id
             })
+            
+            saveCover(newPost, req.body.cover)
         
                  await newPost.save()
 

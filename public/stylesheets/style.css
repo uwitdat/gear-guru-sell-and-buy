@@ -288,14 +288,14 @@ textarea {
 
 .show-title {
   font-family: "M PLUS 1p", sans-serif;
-  font-size: 48px;
+  font-size: 40px;
   color: rgba(30, 235, 109, 0.829);
-  margin: 0;
+  margin-top: 5px;
 }
 
 #show-title-2 {
   font-family: "M PLUS 1p", sans-serif;
-  font-size: 35px;
+  font-size: 30px;
   color: rgba(30, 235, 109, 0.829);
   margin: 0;
 }

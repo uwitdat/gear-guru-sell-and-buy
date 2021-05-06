@@ -17,7 +17,7 @@
       <% userPost.sort((a, b) => b.updatedAt - a.updatedAt); %>
 
       <% userPost.forEach(function(post) { %>
-
+<div class='container'>
         <div class='gtr-post'>
             <% if(post.guitar) { %>
             <a id='link' href='/posts/guitars/<%=post.id%>'><h1 class='gtr-title'><%= post.title.toUpperCase() %></h1></a> 
@@ -37,9 +37,13 @@
              <h4 id='gtr-date'><%= post.createdAt.toLocaleString() %></h4>
              <h4 id='gtr-date'>posted by <%= post.user?.username %></h4></a>
                 <p id='gtr-des'><%= post.description %></p>
+                 </div>
 
-
-            </div>
+                <div class='pic'>
+                    <a id='link' href='/posts/guitars/<%=post.id%>'><img id='logo' src='<%= post.coverImagePath %>'></a>
+                </div>
+        
+     </div>
 <% }); %>
 </div>
 </body>

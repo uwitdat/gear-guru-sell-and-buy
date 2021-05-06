@@ -11,7 +11,7 @@
     <%- include('../partials/sideNav.ejs') %>
     <div class='main'>
       <%- include('../partials/topNav.ejs') %>
-
+<div class='container'>
 <div class='gtr-post2'>
     <div><h1 class='show-title'><%= post.title.toUpperCase() %></h1></div>
     <h4 id='gtr-date'>posted by <%= post.user?.username %></h4>
@@ -30,6 +30,12 @@
 
 </div>
 
+<div class='pic-2'>
+    <img id='logo-2' src='<%= post.coverImagePath %>'>
+   </div>
+
+   </div>
+
 <div class='btns'>
     <% if(user && user.username !== post.user.username || !user){ %>
     <a id='checkout' href=''>Add To Cart<i class="fa fa-shopping-cart"></i></a>  
@@ -44,7 +50,7 @@
     </form>
 </div>
 <% } %>
-
 </div>
+
 </body>
 </html>

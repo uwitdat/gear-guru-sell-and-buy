@@ -413,3 +413,15 @@ textarea {
   color: white;
   border-bottom: 1px solid white;
 }
+
+#input-type-pic {
+  font-size: 24px;
+  font-family: "M PLUS 1p", sans-serif;
+  margin: 4px;
+  width: 500px;
+  padding: 5px;
+  border: 1px solid rgb(116, 116, 116);
+  border-radius: 10px;
+  color: black;
+  background-color: white;
+}

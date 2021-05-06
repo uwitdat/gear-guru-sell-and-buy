@@ -5,6 +5,8 @@ const Guitar = require('../models/guitar')
 const User = require('../models/user')
 
 
+
+
 function newGtr(req, res){
     res.render('new/guitar')
 }

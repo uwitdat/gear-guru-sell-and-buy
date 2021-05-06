@@ -23,4 +23,4 @@ styling for mobile,
 dynamic search feature,
 more brands, and more sections for buying and selling
 
-![gear-guru](https://imgur.com/a/hhFgHZD)
+[Imgur](https://imgur.com/syFdeUd)

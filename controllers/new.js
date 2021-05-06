@@ -3,6 +3,7 @@ const Amp = require('../models/amp');
 const Post = require('../models/post')
 const Guitar = require('../models/guitar')
 const User = require('../models/user')
+const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
 
 
 
@@ -37,9 +38,10 @@ async function createPost(req, res){
                 title, 
                 description, 
                 guitar: newGuitar._id,
-                user: req.user._id
+                user: req.user._id,
             })
-        
+                saveCover(newPost, req.body.cover)
+
                  await newPost.save()
 
                     res.redirect('/posts/guitars') 
@@ -85,6 +87,14 @@ async function createAmpPost(req, res){
        }
 }
 
+function saveCover(newPost, coverEncoded){
+    if(coverEncoded == null) return 
+    const cover = JSON.parse(coverEncoded)
+    if(cover != null && imageMimeTypes.includes(cover.type)){
+        newPost.coverImage = new Buffer.from(cover.data,'base64') 
+        newPost.coverImageType = cover.type
+    }
+}
 
 module.exports = {
     newGtr,

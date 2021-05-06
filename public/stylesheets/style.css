@@ -1,5 +1,3 @@
-@import url("../node_modules/font-awesome/css/font-awesome.min.css");
-
 * {
   box-sizing: border-box;
 }
@@ -167,15 +165,6 @@ span {
   font-size: 30px;
 }
 
-.gtr-post {
-  width: 800px;
-  height: 220px;
-  border: solid 1px rgb(160, 160, 160);
-  margin: 15px;
-  background-color: rgb(32, 32, 32);
-  display: block;
-}
-
 .gtr-post:hover {
   background-color: rgb(49, 49, 49);
 }
@@ -183,7 +172,7 @@ span {
 #price {
   font-family: "M PLUS 1p", sans-serif;
   float: right;
-  font-size: 20px;
+  font-size: 30px;
   padding-right: 10px;
 }
 
@@ -258,6 +247,13 @@ textarea {
   border-radius: 10px;
   height: 130px;
   resize: none;
+}
+
+#image-upload {
+  width: 500px;
+  margin: 4px;
+  padding: 5px;
+  transform: translateX(26%);
 }
 
 #post-btn {
@@ -426,4 +422,39 @@ textarea {
   border-radius: 10px;
   color: black;
   background-color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.gtr-post {
+  width: 650px;
+  height: 250px;
+  border-top: solid 1px rgb(160, 160, 160);
+  border-left: solid 1px rgb(160, 160, 160);
+  border-bottom: solid 1px rgb(160, 160, 160);
+  margin-top: 15px;
+  margin-bottom: 5px;
+  background-color: rgb(32, 32, 32);
+  display: block;
+}
+.pic {
+  background-color: rgb(32, 32, 32);
+  height: 250px;
+  width: 300px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+#logo {
+  height: 250px;
+  width: 300px;
+  border: 1px solid rgb(160, 160, 160);
+}
+
+#logo:hover {
+  cursor: pointer;
 }

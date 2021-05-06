@@ -15,11 +15,8 @@ const dltUsers = User.deleteMany({})
 
 
 
-    User.find({})
-    .then((res) => {
-        return Post.find({user: res}).populate('user').exec()
-    }).then((posts)=>{
-        console.log(posts)
+   Guitar.deleteMany({}).exec().then((res)=> {
+        console.log(res)
     })
 
 

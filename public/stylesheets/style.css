@@ -166,7 +166,7 @@ span {
 #price {
   font-family: "M PLUS 1p", sans-serif;
   float: right;
-  font-size: 30px;
+  font-size: 25px;
   padding-right: 10px;
 }
 
@@ -189,7 +189,7 @@ span {
 }
 
 .gtr-title {
-  font-size: 35px;
+  font-size: 25px;
   font-family: "M PLUS 1p", sans-serif;
   color: rgba(30, 235, 109, 0.829);
   margin: 0;
@@ -295,7 +295,7 @@ textarea {
 
 #show-title-2 {
   font-family: "M PLUS 1p", sans-serif;
-  font-size: 30px;
+  font-size: 20px;
   color: rgba(30, 235, 109, 0.829);
   margin: 0;
 }

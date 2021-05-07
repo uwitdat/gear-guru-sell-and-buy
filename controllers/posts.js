@@ -14,17 +14,32 @@ module.exports = {
     showSolidState,
     showTube,
     showAmpUnder1000,
+
 }
 
 
 //show all guitars
 function showGuitars(req, res){
-    Guitar.find({})
-        .then((res)=>{
-            return Post.find({guitar: res}).populate('guitar user').exec()
-        }).then((posts)=>{
-        res.render('posts/guitars', {posts})
+
+    if(req.query.search){
+
+        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+        Post.find({title: regex})
+            .populate('guitar user').exec()
+                .then((posts)=>{
+                    console.log(posts)
+                    res.render('posts/guitars', {posts})
+
     })
+
+    } else {
+        Guitar.find({})
+            .then((res)=>{
+                return Post.find({guitar: res}).populate('guitar user').exec()
+            }).then((posts)=>{
+            res.render('posts/guitars', {posts})
+        })    
+    }
 }
 
     //show vintage guitars
@@ -112,7 +127,9 @@ function showAmpUnder1000(req, res){
     })
 }
 
-
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&")
+};
     /// get posts 
 
     /// create posts 

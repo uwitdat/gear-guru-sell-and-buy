@@ -477,3 +477,29 @@ textarea {
   object-fit: cover;
   /* border: 4px solid red; */
 }
+
+.search-gtrs {
+  width: 300px;
+  border-radius: 10px;
+  padding: 6px;
+  font-size: 16px;
+  font-family: "M PLUS 1p", sans-serif;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: black;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.search-btn {
+  color: white;
+  background-color: black;
+  font-size: 25px;
+  border: solid 1px black;
+}
+
+.search-btn:hover {
+  cursor: pointer;
+  color: #9b9b9b;
+}

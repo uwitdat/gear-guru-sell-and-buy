@@ -9,6 +9,12 @@
     <%- include('partials/sideNav.ejs') %>
     <div class='main'>
       <%- include('partials/topNav.ejs') %>
+      <form action='/posts/guitars' method='GET' class='searcher'>
+        <div class='search-bar'>
+            <input type='text' name='search' placeholder="Search All Posts" class='search-gtrs'>
+            <button type='submit' class='search-btn'><i class="fa fa-search"></i></button>         
+        </div>
+    </form>
 
       <div class='h2-text'>
         <% if(user){ %>

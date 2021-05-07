@@ -19,8 +19,9 @@ Description:
 Buy or post for selling guitars and/or amps app.
 
 Future plans include:
-styling for mobile,
-dynamic search feature,
-more brands, and more sections for buying and selling
+* styling for mobile,
+* improve dynamic search feature,
+* more brands, and more sections for buying and selling
+* finish "checkout" functionality
 
 [Gear Guru Screenshot](https://imgur.com/syFdeUd)
